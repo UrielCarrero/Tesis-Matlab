@@ -42,7 +42,7 @@ This file runs a 50 seconds simulation, with the controller cf2x provided by Pyb
 
 ###  00_characterize_controller.py
 
-This file allows to evaluates the transitory state response for the controller cf2x provided by Pybullet for an specific axis. Besides measures the step response in terms of settling time, rise time, overshooot, steady state error and control effort by ITSE function. These meaures are printed out in the console at the end of the simultaion. The magnitude of the signal might be specified with the variable **params**, the trajectory type might be specified with the variable **trajectories**  and the axis might be defined in the variable **ax**.
+This file allows to evaluates the transitory state response for the controller cf2x provided by Pybullet for an specific axis. Besides measures the step response in terms of settling time, rise time, overshooot, steady state error and control effort by ITSE function. These meaures are printed out in the console at the end of the simultaion. The magnitude of the signal might be specified with the variable **params**, the trajectory type might be specified with the variable **trajectories**, the axis might be defined in the variable **ax** and the duration of the simulation might be defined with the parameter **duration_sec**.
 
 The axis where it's possible to perform the test are:
 - 'x' -> possition in x axis. 
@@ -75,7 +75,9 @@ The possible kind of trajectories to test are:
 - 'random_step'
 - 'stopped'
 
-###  00_characterize_controller.py
+###  01_dataset_gen.py
+
+This file allows to simulate and record a set of trajectories automatically by defining some few parameters. For execute this script is necessary to define parameters for the disturbances to perform: the axis where the drone will suffer disturbances might be defined with the variable **DIST_STATES**, the magnitude of the disturbances with the list **D_FACTOR**, the probability to suffer a disturbance with the list **D_PROB** and the time where the first disturbance will occur, which might be defined witht the variable **DIST_TIME**. Also it's necessary to define the number of kinds of trajectories to get in the dataset with the variable **N_UNIQUE_TRAJ**, the numer of trajectories per kind of trajectory with the variable **N_SAMPLES**, the name of the folder where the data will be save with the variable **path** and the duration of the simulation with the parameter **duration_sec**. The saved data will be saved in format .csv and you can find the specified folder whitin the folder files, within logs.
 
 
 
