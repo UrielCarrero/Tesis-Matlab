@@ -53,26 +53,7 @@ The axis where it's possible to perform the test are:
 - 'r' -> position in yaw axis.
 - 'wr' -> speed in yaw axis.
 
-The possible kind of trajectories to test are:
-
-- 'step'
-- 'pulse'
-- 'ramp'
-- 'square'
-- 'sin'
-- 'cos'
-- 'noise'
-- 'sawtooth_sweep'
-- 'triangular_sweep'
-- 'chirp'
-- 'chirp_amplin'
-- 'big_step_ret0'
-- 'big_step_notret0'
-- 'step_notret0'
-- 'ramp_step_notret0'
-- 'step_ret0'
-- 'random_step'
-- 'stopped'
+The possible kind of trajectories to test are showed up on the explanation of the trajectories.py file.
 
 ###  01_dataset_gen.py
 
@@ -106,10 +87,45 @@ This script facilitates to evaluate the transitory response of neural controller
 
 ### 03_ANN_vs_LSTM_vs_Control.py
 
+This script like the previous one, allows to evaluate the transitory response with defined trajectories and axis. But you can compare many pre-trained controller models and the controller provided by Pybullet. It's only necessary to define the list of paths where are the models with the dictionary **model_path** with the respectibly name, the list of colors for plot the trajectory of each controller with the dictionary **COLOR_CTRLS** and the rest variants explained previously for "03_ANN_vs_Control_lemniscate.py" script.   
 
 ### DronePySim.py
 
+This script contains 2 defined classes that facilitates to perform the simulation with Pybullet and are the basis of the above scripts.
+
+The first class is **Drone**. Where are defined all the methods and propierties of the drone which uses the original controller in Pybullet. Those propierties are: Drone's model, name, initial linear position, initial angular position, controller and control frecuency. The methods assign the desired controller, assign the specific PID constants, calculates the control signal and updates the drone's states.  
+
+The second class is **PybulletSimDrone**.Where are defined all the methods and propierties that the simulation environment needs to runs in Pybullet. Those propierties are: quantity of drones, physics engine, the name of the file where the data will be save, the parameters for perform the disturbances, the simulation frequency, the control frequency, duration time of the simulation, the time between each step simulation and flags for indicate whether to use the pybullet gui, record video, plot the simulation results, use steps in the physics engine and add obstacles within the envronment. The methods assigns the drones to the environment, creates and sets up the environment, chooses, inicializates and modifies the set-point signals, performs a simulation step, sets up the logger, performs the simulation and save/return the state data.
+
 ### NNDrone.py
+
+This file contains the neural network controller class and one function that allows to creates and return the neural controller. This by specifying the model path, the path with the "data_description" file, the kind of neural network to implement, the inbound states to the neural controller, the list of outputs from the neural network and the quantity of previous states to ingress to the neural network (window) and whether you want a two or a three dimmension input to the neural network. 
+
+The class **NNDrone** contains methods and propierties for implement a drone with a neural controller within the Pybullet environment. Those propierties (besides the parameters explained in the previous paragrahp) are the initial linear position, the initial angular position, the model of the neural controller and the drone´s name. The methods updates the drone states, applies the normalization to the states, normalizes in reverse the outputs, performs all the pre-processing process and calculates the prediction from the model.
+
+### trajectories.py
+
+This script contains all the functions that allows to create and perform the desired trajectories. These trajectories are: 
+
+- 'step'
+- 'pulse'
+- 'ramp'
+- 'square'
+- 'sin'
+- 'cos'
+- 'noise'
+- 'sawtooth_sweep'
+- 'triangular_sweep'
+- 'chirp'
+- 'chirp_amplin'
+- 'big_step_ret0'
+- 'big_step_notret0'
+- 'step_notret0'
+- 'ramp_step_notret0'
+- 'step_ret0'
+- 'random_step'
+- 'stopped'
+
 
 
 
