@@ -87,7 +87,7 @@ This file allows to plot the states of random trajectories within datasets folde
 
 This file tests the response for lemiscate trajectory along the x and y axis, with a ramp trajectory along z axis, for the original controller provided by Pybullet and the neural controller. For execute this script is necesary to define the parameters for disturbances, the variables **path** and **duration_sec** described above. Also is necessary to define the quantity of previous states to ingress to the neural controller throught the **window** variable, the path and the name of dataset folder with the variables **root** and **dataset** respectibly, the path of the pre-trained neural network model throught the variable **model_path**, the path of the "data_description" file (generated while the traingin, which contains the data analisys from an specific dataset used to normalize the inputs) throught the variable **norm_data_path**, the list of inbount states to the neural network located with in the list **states_list**. Also it'snecessary to  assign a value to **feedback** and **flat** variables according to what's described within the script.
 
-The possible valiues to locate, within the list **states_list** are:
+The possible values to locate, within the list **states_list** are:
 - Position states: 'x', 'y','z','p','q','r'.
 - Speed states: 'vx','vy','vz','wp','wq','wr'.
 - Aceleration states: 'ax','ay','az','ap','aq',ar','ux','uy','uz','ur'.
