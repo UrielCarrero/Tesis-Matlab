@@ -1,10 +1,6 @@
 # Pybullet_Deep_Learning_Drone_Controller
 
-This project facilitates the data extraction, training process and test for neural controllers in Pybullet. Incluiding files which allows to characterize 
-the PID controller provided by Pybullet based on the response in terms of the control evaluation parameters, create and record a set of several kind of trajectories, 
-create individual trajectories with specified parameters, test again the recorded trajectories with different controllers, train neural networks with different 
-architectures and test the performance of the original controller versus the trained neural controllers aaplying different aerodynamic effects. Which hinder the 
-flight performance. 
+This project facilitates the data extraction, training process and test for neural controllers in Pybullet. Incluiding neural network models, datasets for train neural controllers and files which allows to characterize the PID controller provided by Pybullet based on the response in terms of the control evaluation parameters, create and record a set of several kind of trajectories, create individual trajectories with specified parameters, train neural networks with different architectures and test the performance of the original controller versus the trained neural controllers aaplying different aerodynamic effects. Which hinder the flight performance. 
 
 ## Instalation Guide (Pending):
 
@@ -81,7 +77,14 @@ This file allows to simulate and record a set of trajectories automatically by d
 
 ###  01_dataset_gen_manual.py
 
-This file allows to simulate and save the states of an specified trajectory by manual. For execute this script is necesary to define the parameters for disturbances, the variables **path** and **duration_sec** described above. It's necessary to define the axes where the trajectories will be performed with the list **axis** and the kind of trajectory per axis with the list **trajectories**, taking in account the position where was located each axis in the list **axis** (the possible values to assign in these both list are the same showed in the description of the file 00_characterize_controller.py)
+This file allows to simulate and save the states of an specified trajectory by manual. For execute this script is necesary to define the parameters for disturbances, the variables **path** and **duration_sec** described above. It's necessary to define the number of trajectory to save with the variable j, the axes where the trajectories will be performed with the list **axis** and the kind of trajectory per axis with the list **trajectories**, taking in account the position where was located each axis in the list **axis** (the possible values to assign in these both list are the same showed in the description of the file 00_characterize_controller.py)
+
+###  02_replay_trajectory.py
+
+This file allows to plot the states of random trajectories within datasets folders from the path "logs/Datasets/" (in this path you can find the default datasets provided from this repository). For execute this script only is necessary to define the name of the folder which contains the dataset to read, it might be specified with the variable **Dataset_name**. Furthermore if you want to read an specific trajectory you can break the main for loop and assign the name of the file that you want to read to the variable **filename**.
+
+###  03_ANN_vs_Control_lemniscate.py
+
 
 
 
