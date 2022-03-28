@@ -4,7 +4,7 @@ This project facilitates the data extraction, training process and test for neur
 
 ## Instalation Guide (Pending):
 
-### Note:
+#### Note 1:
 Tensorflow 2.5.0 is incompatible with numpy versions that are above to 1.19.5 version and Pybullet versions that are above to 3.1.7 are incompatible with numpy versions below to 1.20.0 version.
 
 ### Recommended Versions:
@@ -26,7 +26,7 @@ In this section we show uses cases and funcionalities of the files within this r
 
 ###  00_hello_world.py
 
-This file runs a 50 seconds simulation, with the controller cf2x provided by Pybullet. Where the drone realize a hover and we confirm that the project was installed correctly. When the simulation is finished it should be displayed a graphic with the states of the drone and a three dimension graphic that describes the trajectory, as follows:
+This script runs a 50 seconds simulation, with the controller cf2x provided by Pybullet. Where the drone realize a hover and we confirm that the project was installed correctly. When the simulation is finished it should be displayed a graphic with the states of the drone and a three dimension graphic that describes the trajectory, as follows:
 
 <p align = center>
 <img src="https://github.com/UrielCarrero/Tesis-Matlab/blob/main/hello_world.png" width="60%" />
@@ -35,6 +35,9 @@ This file runs a 50 seconds simulation, with the controller cf2x provided by Pyb
 <p align = center>
 <img src="https://github.com/UrielCarrero/Tesis-Matlab/blob/main/states_hello_world.png" width="80%" />
 </p>
+
+#### Note 2:
+If you want to run the project with a machine that doesn't has gpu, set the parameter **gui** in each script as False.
 
 ###  00_characterize_controller.py
 
@@ -90,7 +93,26 @@ This file tests the response for lemiscate trajectory along the x and y axis, wi
 The possible values to locate, within the list **states_list** are:
 - Position states: 'x', 'y','z','p','q','r'.
 - Speed states: 'vx','vy','vz','wp','wq','wr'.
-- Aceleration states: 'ax','ay','az','ap','aq',ar','ux','uy','uz','ur'.
+- Aceleration states: 'ax','ay','az','ap','aq',ar'.
+- Set-point signals: 'ux','uy','uz','ur'.
+
+###  03_ANN_vs_Control_downwash.py - 03_ANN_vs_Control_ground.py - 03_ANN_vs_Control_drag.py  
+
+These scripts allows you to compare the performance of the neural controller versus the controller provided by Pybullet under the downwash, ground and drag aerodinamic effects respectibly. To run this script is necessary to define the same parameters explained preciously for "03_ANN_vs_Control_lemniscate.py" script.
+
+### 03_Characterize_ANN_Control.py
+
+This script facilitates to evaluate the transitory response of neural controller and the controller provided by Pybullet under defined trajectories along different defined axis, located within the **trajectories** and **axis** lists. Further to run this script is necessary to define the same parameters explained preciously for "03_ANN_vs_Control_lemniscate.py" script.
+
+### 03_ANN_vs_LSTM_vs_Control.py
+
+
+### DronePySim.py
+
+### NNDrone.py
+
+
+
 
 
 
