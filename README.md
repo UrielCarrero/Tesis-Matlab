@@ -132,7 +132,7 @@ This script contains all the functions that allows to create and perform the des
 - 'random_step'
 - 'stopped'
 
-### Model_Training_LSTM
+### Model_Training_LSTM.ipynb
 
 With this script are trained the neural controller models, where if there is a gpu, it's set up for train. subsequently the dataset is read and the data is normalized. Then the data is divided in 3 bunchs, one for train, other for validation and the last one for test. Later is defined a class for a tensorflow  data generator, which will ingress the data to the neural network with the shape required by tensorflow and facilitates the use of less RAM memory by generate the samples while the training is performed. Then we create 3 generators for each bunch that divides the data. Later we define the parameters for training like the callbacks, the optimizer, the learning rate, the metrics and the neural network arquitecture. Finally we compile the model and start the training where we especify the generators to use for training and validation, the steps per epoch and the quantity of epochs.
 
