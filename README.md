@@ -35,7 +35,7 @@ In this section we show uses cases and funcionalities of the files within this r
 
 ###  00_hello_world.py
 
-This script runs a 50 seconds simulation, with the controller cf2x provided by Pybullet. Where the drone realizes a hover and we confirm that the project was installed correctly. When the simulation is finished it should be displayed a graphic with the states of the drone and a three dimension graphic that describes the trajectory, as follows:
+This script runs a 50 seconds simulation, with the controller DSLPID provided by Pybullet. Where the drone realizes a hover and we confirm that the project was installed correctly. When the simulation is finished it should be displayed a graphic with the states of the drone and a three dimension graphic that describes the trajectory, as follows:
 
 <p align = center>
 <img src="https://github.com/UrielCarrero/Tesis-Matlab/blob/main/hello_world.png" width="60%" />
@@ -47,7 +47,7 @@ This script runs a 50 seconds simulation, with the controller cf2x provided by P
 
 ###  00_characterize_controller.py
 
-This file allows to evaluates the transitory state response for the controller cf2x provided by Pybullet for an specific axis. Besides measures the step response in terms of settling time, rise time, overshooot, steady state error and control effort by ITSE function. These meaures are printed out in the console at the end of the simultaion. The magnitude of the signal might be specified with the variable **params**, the trajectory type might be specified with the variable **trajectories**, the axis might be defined in the variable **ax** and the duration of the simulation might be defined with the parameter **duration_sec**.
+This file allows to evaluates the transitory state response for the controller DSLPID provided by Pybullet for an specific axis. Besides measures the step response in terms of settling time, rise time, overshooot, steady state error and control effort by ITSE function. These meaures are printed out in the console at the end of the simultaion. The magnitude of the signal might be specified with the variable **params**, the trajectory type might be specified with the variable **trajectories**, the axis might be defined in the variable **ax** and the duration of the simulation might be defined with the parameter **duration_sec**.
 
 The axis where it's possible to perform the test are:
 - 'x' -> possition in x axis. 
