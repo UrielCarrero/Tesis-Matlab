@@ -20,7 +20,7 @@ Tensorflow 2.5.0 is incompatible with numpy versions that are above to 1.19.5 ve
 - pillow 9.0.1
 
 
-## Applications And File Descriptions (Pending):
+## Applications And File Descriptions:
 
 In this section we show uses cases and funcionalities of the files within this repository. 
 
@@ -82,10 +82,10 @@ The possible values to locate, within the list **states_list** are:
 These scripts allows you to compare the performance of the neural controller versus the controller provided by Pybullet under the downwash, ground and drag aerodinamic effects respectibly. To run this script is necessary to define the same parameters explained preciously for "03_ANN_vs_Control_lemniscate.py" script.
 
 <p float="left">
-  <img src="https://github.com/UrielCarrero/Tesis-Matlab/blob/main/Drag.png" width="31%" />
-  <img src="https://github.com/UrielCarrero/Tesis-Matlab/blob/main/Downwash.png" width="30%" /> 
-  
-</p>
+  <img src="https://github.com/UrielCarrero/Tesis-Matlab/blob/main/Drag.png" width="31%" />  
+  <img src="https://github.com/UrielCarrero/Tesis-Matlab/blob/main/Downwash.png" width="30.4%" /> 
+  <img src="https://github.com/UrielCarrero/Tesis-Matlab/blob/main/Ground.png" width="36%" /> 
+</p>  
 
 ### 03_Characterize_ANN_Control.py
 
@@ -133,6 +133,14 @@ This script contains all the functions that allows to create and perform the des
 - 'stopped'
 
 ### Model_Training_LSTM
+
+With this script are trained the neural controller models, where if there is a gpu, it's set up for train. subsequently the dataset is read and the data is normalized. Then the data is divided in 3 bunchs, one for train, other for validation and the last one for test. Later is defined a class for a tensorflow  data generator, which will ingress the data to the neural network with the shape required by tensorflow and facilitates the use of less RAM memory by generate the samples while the training is performed. Then we create 3 generators for each bunch that divides the data. Later we define the parameters for training like the callbacks, the optimizer, the learning rate, the metrics and the neural network arquitecture. Finally we compile the model and start the training where we especify the generators to use for training and validation, the steps per epoch and the quantity of epochs.
+
+For evaluate the model we use the test generator and evaluate the behavior of our model for all the samples within the test bunch. Further we take an batch from the generator and we compare the prediction for this batch versus the target outputs plotting both in one figure.  
+
+
+
+
 
 
 
