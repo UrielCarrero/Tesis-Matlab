@@ -82,7 +82,7 @@ The possible values to locate, within the list **states_list** are:
 These scripts allows you to compare the performance of the neural controller versus the controller provided by Pybullet under the downwash, ground and drag aerodinamic effects respectibly. To run this script is necessary to define the same parameters explained preciously for "03_ANN_vs_Control_lemniscate.py" script.
 
 <p float="left">
-  <img src="https://github.com/UrielCarrero/Tesis-Matlab/blob/main/Drag.png" width="30%" />
+  <img src="https://github.com/UrielCarrero/Tesis-Matlab/blob/main/Drag.png" width="31%" />
   <img src="https://github.com/UrielCarrero/Tesis-Matlab/blob/main/Downwash.png" width="30%" /> 
   
 </p>
